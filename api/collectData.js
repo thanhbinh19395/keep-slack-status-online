@@ -32,12 +32,10 @@ const main = async () => {
   // await scrapeConversations(page)
   // await scrapeChannels(page)
   // eslint-disable-next-line no-constant-condition
-  while (true) {
-    await sleep(2000);
-    await gotoChannel(page, "DM", "Slackbot");
-    await sleep(2000);
-    await gotoChannel(page, "DM", "Dustin Ho");
-  }
+  await gotoChannel(page, "DM", "Slackbot");
+  await gotoChannel(page, "DM", "Dustin Ho");
+  await gotoChannel(page, "DM", "Slackbot");
+  await gotoChannel(page, "DM", "Dustin Ho");
 };
 
  async function handler(req, res) {
