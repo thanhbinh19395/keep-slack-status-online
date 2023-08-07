@@ -1,19 +1,21 @@
 const {
   recordScrapeDuration,
-} = require("./collectData/utils/recordScrapeDuration");
-const { launchBrowser } = require("./collectData/utils/launchBrowser");
-const { loginToSlack } = require("./collectData/utils/loginToSlack");
-const { gotoWorkspace } = require("./collectData/utils/gotoWorkspace");
+} = require("../utils/collectData/utils/recordScrapeDuration");
+const { launchBrowser } = require("../utils/collectData/utils/launchBrowser");
+const { loginToSlack } = require("../utils/collectData/utils/loginToSlack");
+const { gotoWorkspace } = require("../utils/collectData/utils/gotoWorkspace");
 const {
   throwErrorIfNoConversationOrChannel,
-} = require("./collectData/utils/scrape/parseNames");
+} = require("../utils/collectData/utils/scrape/parseNames");
 const {
   scrapeConversations,
   scrapeChannels,
-} = require("./collectData/utils/scrape");
-const { closeBrowser } = require("./collectData/utils/closeBrowser");
+} = require("../utils/collectData/utils/scrape");
+const { closeBrowser } = require("../utils/collectData/utils/closeBrowser");
 
-const { gotoChannel } = require("./collectData/utils/scrape/gotoChannel");
+const {
+  gotoChannel,
+} = require("../utils/collectData/utils/scrape/gotoChannel");
 
 const sleep = async (ms) => {
   // eslint-disable-next-line no-undef
