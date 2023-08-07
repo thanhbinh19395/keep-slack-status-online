@@ -2,11 +2,15 @@
   "repository": "https://github.com/vercel/examples.git",
   "license": "MIT",
   "private": true,
+  "scripts": {
+    "collect": "node ./api/collectData.js"
+  },
   "devDependencies": {
     "@types/node": "^17.0.42",
     "@vercel/node": "^2.9.6",
     "typescript": "^4.7.3",
     "jsonfile": "^6.1.0",
-    "puppeteer": "^13.5.1"
+    "chrome-aws-lambda": "10.1.0",
+    "puppeteer-core": "10.1.0"
   }
 }
