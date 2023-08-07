@@ -40,11 +40,13 @@ const main = async () => {
   }
 };
 
-export default async function handler(req, res) {
-  const { name = "World" } = req.query;
-  await main();
+ async function handler(req, res) {
+   const { name = "World" } = req.query;
+   await main();
 
-  return res.json({
-    message: `Hello ${name}!`,
-  });
-}
+   return res.json({
+     message: `Hello ${name}!`,
+   });
+ }
+
+ module.exports = handler;

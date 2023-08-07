@@ -1,19 +1,19 @@
 // api/run.js
-import edgeChromium from "chrome-aws-lambda";
+const edgeChromium = require("chrome-aws-lambda");
 
 // Importing Puppeteer core as default otherwise
 // it won't function correctly with "launch()"
-import puppeteer from "puppeteer-core";
+const puppeteer = require("puppeteer-core");
 const LOCAL_CHROME_EXECUTABLE =
   "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
 
 const HEADLESS_MODE = process.env.HEADLESS_MODE === "true";
 
-const executablePath =
-  (await edgeChromium.executablePath) || LOCAL_CHROME_EXECUTABLE;
 
 async function launchBrowser() {
   let options;
+  const executablePath =
+    (await edgeChromium.executablePath) || LOCAL_CHROME_EXECUTABLE;
   if (HEADLESS_MODE) {
     options = {
       headless: true,
